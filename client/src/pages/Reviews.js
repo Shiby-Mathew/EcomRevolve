@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { fetchReviews } from "../services/reviewService";
 import ReviewList from "../components/ReviewList";
-import reviewService from "../services/reviewService";
-import "./Page.css";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    // Fetch reviews from the server when the component mounts
-    reviewService.getAllReviews().then((data) => {
-      setReviews(data);
-    });
+    const getReviews = async () => {
+      try {
+        const reviewsData = await fetchReviews();
+        setReviews(reviewsData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getReviews();
   }, []);
 
   return (
