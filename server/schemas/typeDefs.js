@@ -10,6 +10,12 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
+  type Brand {
+    _id: ID
+    name: String!
+    description: String!
+  }
+
   type Query {
     me: User
     brands: [Brand]
