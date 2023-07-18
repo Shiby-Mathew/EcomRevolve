@@ -1,11 +1,11 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User,Marketplace } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    brands: async () => {
-      return Brand.find();
+    marketplaces: async () => {
+      return Marketplace.find();
     },
     me: async (parent, args, context) => {
       if (context.user) {

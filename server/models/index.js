@@ -1,5 +1,5 @@
 const User = require("./User");
-const Brand = require("./Brand");
+const Marketplace = require("./Marketplace");
 const Review = require("./Review");
 
-module.exports = { User, Brand, Review };
+module.exports = { User, Marketplace, Review };
