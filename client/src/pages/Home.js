@@ -2,26 +2,46 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
+const marketplaces = [
+  {
+    id: 1,
+    name: "Amazon",
+    imageSrc: require("../images/amazon.png"),
+    altText: "Amazon Marketplace",
+    link: "/marketplace/1",
+  },
+  {
+    id: 2,
+    name: "eBay",
+    imageSrc: require("../images/ebay.png"),
+    altText: "eBay Marketplace",
+    link: "/marketplace/2",
+  },
+  {
+    id: 3,
+    name: "Catch",
+    imageSrc: require("../images/catch.png"),
+    altText: "Catch Marketplace",
+    link: "/marketplace/3",
+  },
+];
+
 function Home() {
   return (
     <div className="home-content">
       <div className="container">
-        <h1>
+        {/* <h1>
           eCommerce Revolve, a place where you can share your shopping
           experiences.
-        </h1>
+        </h1> */}
         <div className="marketplace-list">
-          <div className="marketplace-item">
-            <Link to="/marketplace1">
-              {/* <img src={placeholderImage1} alt="Marketplace 1" /> */}
-            </Link>
-          </div>
-          <div className="marketplace-item">
-            <Link to="/marketplace2">
-              {/* <img src={placeholderImage2} alt="Marketplace 2" /> */}
-            </Link>
-          </div>
-          {/* Add more marketplace placeholders as needed */}
+          {marketplaces.map((marketplace) => (
+            <div className="marketplace-item" key={marketplace.id}>
+              <Link to={marketplace.link}>
+                <img src={marketplace.imageSrc} alt={marketplace.altText} />
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>

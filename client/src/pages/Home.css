@@ -2,6 +2,7 @@
   background-color: #f8f8f8;
   padding: 50px 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
 }
 
 .container {
@@ -9,33 +10,42 @@
   margin: 0 auto;
 }
 
-.home-heading {
-  font-size: 36px;
-  font-weight: bold;
-  text-align: center;
+h1 {
+  font-size: 35px;
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 30px;
 }
 
 .marketplace-list {
-  display: grid;
-  grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .marketplace-item {
+  flex-basis: calc(33.33% - 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 200px;
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
-  text-align: center;
+  margin-right: 100px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
-.marketplace-link {
-  text-decoration: none;
-  color: #333;
+.marketplace-item:hover {
+  transform: translateY(-5px);
 }
 
-.marketplace-image {
+.marketplace-item img {
   width: 100%;
   height: auto;
   max-height: 200px;
@@ -44,22 +54,54 @@
   margin-bottom: 10px;
 }
 
-.marketplace-name {
+.marketplace-item .marketplace-name {
   font-size: 24px;
   font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.marketplace-item .btn-primary {
+  background-color: #83bbcc;
+  border-color: #83bbcc;
+}
+
+.marketplace-item .btn-secondary {
+  background-color: #3c4042;
+  border-color: #3c4042;
+}
+
+.marketplace-item .btn-primary:hover,
+.marketplace-item .btn-secondary:hover {
+  background-color: #3f5b63;
+  border-color: #3f5b63;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.card-buttons a {
+  margin: 0 5px;
 }
 
 /* Responsive styles */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   /* For iPads and larger screens */
   .marketplace-list {
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .marketplace-item {
+    flex-basis: calc(33.33% - 20px);
   }
 }
 
-@media screen and (max-width: 767px) {
-  /* For mobile devices */
-  .marketplace-list {
-    grid-template-columns: 1fr;
+@media screen and (min-width: 1024px) {
+  /* For larger screens */
+  .marketplace-item {
+    flex-basis: calc(33.33% - 20px);
   }
 }
