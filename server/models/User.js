@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 ///check reviews schemas here
 
 const userSchema = new Schema({
-  name: {
+  username: {
     type: String,
     required: true,
     unique: true,
