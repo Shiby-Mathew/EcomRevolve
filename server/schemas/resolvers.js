@@ -4,6 +4,9 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    brands: async () => {
+      return Brand.find();
+    },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
@@ -27,11 +30,12 @@ const resolvers = {
       }
 
       const token = signToken(user);
-      
+
       return { token, user };
     },
 
     addUser: async (parent, { username, email, password }) => {
+      console.log(" inside");
       const user = await User.create({ username, email, password });
       console.log(user);
 
@@ -39,9 +43,6 @@ const resolvers = {
 
       return { token, user };
     },
-   
-
-   
   },
 };
 module.exports = resolvers;

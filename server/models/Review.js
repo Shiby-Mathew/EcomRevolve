@@ -13,8 +13,15 @@ const reviewSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  user: User,
-  brands: Brand,
+
+  users: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
+
+
 });
 
 module.exports = reviewSchema;
