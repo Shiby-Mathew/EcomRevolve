@@ -5,10 +5,8 @@ import "./Register.css";
 function Register() {
   return (
     <div className="register-content">
-      <div className="container">
-        <h1 className="register-heading">Register</h1>
-        <RegisterForm />
-      </div>
+      <h1 className="register-heading">Register</h1>
+      <RegisterForm />
     </div>
   );
 }
