@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="container">
-        <span className="navbar-brand">E-commerce Review Platform</span>
+        <span className="navbar-brand">eCommerce Revolve</span>
         <ul className="navbar-nav">
           <li className="nav-item">
             <a className="nav-link" href="/">
