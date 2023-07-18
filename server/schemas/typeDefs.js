@@ -10,7 +10,7 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-  type Brand {
+  type Marketplace {
     _id: ID
     name: String!
     description: String!
@@ -18,7 +18,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    brands: [Brand]
+    marketplaces: [Marketplace]
   }
 
   type Mutation {

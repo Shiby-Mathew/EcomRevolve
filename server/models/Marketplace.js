@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const reviewSchema = require("./Review");
 
-const brandSchema = new Schema({
+const marketplaceSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -12,6 +12,6 @@ const brandSchema = new Schema({
   },
   reviews: [reviewSchema],
 });
-const Brand = model("Brand", brandSchema);
+const Marketplace = model("Marketplace", marketplaceSchema);
 
-module.exports = Brand;
+module.exports = Marketplace;
