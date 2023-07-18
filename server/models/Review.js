@@ -13,6 +13,12 @@ const reviewSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  location: {
+    type: String,
+  },
+  shipping_time: {
+    type: String,
+  },
 
   users: [
     {
@@ -20,8 +26,6 @@ const reviewSchema = new Schema({
       ref: "User",
     },
   ],
-
-
 });
 
 module.exports = reviewSchema;
