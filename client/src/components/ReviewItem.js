@@ -1,5 +1,5 @@
 import React from "react";
-import "./ReviewItem.css";
+// import "./ReviewItem.css";
 
 function ReviewItem({ review }) {
   return (

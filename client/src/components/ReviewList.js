@@ -1,6 +1,6 @@
 import React from "react";
 import ReviewItem from "./ReviewItem";
-import "./ReviewList.css";
+// import "./ReviewList.css";
 
 function ReviewList({ reviews }) {
   return (
