@@ -1,5 +1,21 @@
 .footer {
-  background-color: #f8f9fa;
-  padding: 10px;
+  background: #0fa6f7;
+  color: #fff;
+  margin-top: 5px;
+  padding: 20px;
+  display: flex;
   text-align: center;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer-text {
+  font-size: 14px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin: 0 auto;
 }

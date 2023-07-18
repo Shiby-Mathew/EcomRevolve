@@ -5,7 +5,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        &copy; 2023 eCommerce Revolve. All rights reserved.
+        <p className="footer-text">
+          &copy; 2023 eCommerce Revolve. All rights reserved.
+        </p>
       </div>
     </footer>
   );
