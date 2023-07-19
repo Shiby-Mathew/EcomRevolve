@@ -25,7 +25,7 @@ const RegisterForm = () => {
   };
 
   const handleSubmit = async (event) => {
-    console.log(formState.name);
+    console.log(formState.username);
     console.log(formState.email);
 
     event.preventDefault();
@@ -40,6 +40,13 @@ const RegisterForm = () => {
     } catch (e) {
       console.error(e);
     }
+
+    // clear form values
+    setFormState({
+      username: "",
+      email: "",
+      password: "",
+    });
   };
 
   return (
