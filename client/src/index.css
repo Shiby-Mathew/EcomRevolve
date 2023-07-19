@@ -1,0 +1,218 @@
+/***** signup page**********/
+
+.signup-content {
+  background-color: #f8f8f8;
+  padding: 50px 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.signup-heading {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/************ Homepage *************/
+.home-content {
+  background-color: #f8f8f8;
+  padding: 50px 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 35px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.marketplace-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.marketplace-item {
+  flex-basis: calc(33.33% - 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 200px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-right: 100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.marketplace-item:hover {
+  transform: translateY(-5px);
+}
+
+.marketplace-item img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.marketplace-item .marketplace-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.marketplace-item .btn-primary {
+  background-color: #83bbcc;
+  border-color: #83bbcc;
+}
+
+.marketplace-item .btn-secondary {
+  background-color: #3c4042;
+  border-color: #3c4042;
+}
+
+.marketplace-item .btn-primary:hover,
+.marketplace-item .btn-secondary:hover {
+  background-color: #3f5b63;
+  border-color: #3f5b63;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.card-buttons a {
+  margin: 0 5px;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+  /* For iPads and larger screens */
+  .marketplace-list {
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .marketplace-item {
+    flex-basis: calc(33.33% - 20px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* For larger screens */
+  .marketplace-item {
+    flex-basis: calc(33.33% - 20px);
+  }
+}
+
+/*********** MarketPlace **********/
+.marketplace-content {
+  background-color: #f8f8f8;
+  padding: 50px 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.marketplace-heading {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.customer-reviews {
+  margin-top: 50px;
+}
+
+.reviews-heading {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .marketplace-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+/*****SignUp Form ******/
+
+.signup-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-form button {
+  width: 70%;
+  padding: 10px;
+  background-color: #0fa6f7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background-color: #144e89;
+}

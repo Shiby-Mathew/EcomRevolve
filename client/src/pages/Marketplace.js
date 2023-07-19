@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviews } from "../services/reviewService";
 import ReviewList from "../components/ReviewList";
-import "./Marketplace.css";
+// import "./Marketplace.css";
 
 function Marketplace() {
   const { marketplaceId } = useParams();
