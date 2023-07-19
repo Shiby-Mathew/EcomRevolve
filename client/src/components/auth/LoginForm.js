@@ -1,5 +1,5 @@
 import React from "react";
-import "./LoginForm.css";
+// import "./LoginForm.css";
 
 function LoginForm() {
   const handleSubmit = (e) => {
@@ -8,7 +8,7 @@ function LoginForm() {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form className="signup-form" onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" required />
