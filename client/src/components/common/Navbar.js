@@ -5,7 +5,11 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="container">
-        <span className="navbar-brand">eCommerce Revolve</span>
+        <span className="navbar-brand">
+          <a className="nav-link" href="/">
+            eCommerce Revolve
+          </a>
+        </span>
         <ul className="navbar-nav">
           <li className="nav-item">
             <a className="nav-link" href="/">
