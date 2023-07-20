@@ -1,11 +1,19 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User,Marketplace } = require("../models");
+const { User, Marketplace, List } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     marketplaces: async () => {
       return Marketplace.find();
+    },
+
+    lists: async () => {
+      console.log("inside the lists");
+
+      return List.find();
+      // console.log(value);
+      //
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -17,7 +25,7 @@ const resolvers = {
   Mutation: {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-      //console.log(user);
+      console.log(user);
 
       if (!user) {
         throw new AuthenticationError("No profile with this email found!");
