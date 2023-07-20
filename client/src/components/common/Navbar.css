@@ -39,4 +39,5 @@
 
 .nav-link:hover {
   color: #144e89;
+  transition: font-size 0.3s, margin-bottom 0.3s, color 0.3s;
 }

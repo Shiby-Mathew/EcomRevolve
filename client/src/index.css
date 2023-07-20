@@ -126,21 +126,8 @@ h1 {
 /*********** MarketPlace **********/
 .marketplace-content {
   background-color: #f8f8f8;
-  padding: 50px 0;
+  padding: 20px;
   font-family: "Helvetica Neue", Arial, sans-serif;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.marketplace-heading {
-  font-size: 36px;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-  margin-bottom: 30px;
 }
 
 .customer-reviews {
@@ -154,6 +141,118 @@ h1 {
   color: #333;
   margin-bottom: 20px;
 }
+
+/* Marketplace.css */
+
+.marketplace-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.marketplace-heading {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0fa6f7;
+}
+
+.marketplace-heading:hover {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #144e89;
+  transition: font-size 0.3s, margin-bottom 0.3s, color 0.3s;
+}
+
+.marketplace-info {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.marketplace-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.marketplace-content a {
+  text-decoration: none;
+}
+.marketplace-info p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.marketplace-info p:hover {
+  font-size: 20px;
+  margin-bottom: 10px;
+  transition: font-size 0.3s, margin-bottom 0.3s;
+}
+
+.marketplace-info ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+}
+
+.marketplace-info li {
+  margin: 5px;
+  padding: 5px;
+  text-decoration: none;
+  border: #0fa6f7 solid;
+  border-radius: 5px;
+}
+.marketplace-info li:hover {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #144e89;
+  transition: font-size 0.3s, margin-bottom 0.3s, color 0.3s;
+}
+.marketplace-info strong {
+  font-weight: bold;
+}
+
+.customer-reviews {
+  margin-top: 40px;
+}
+
+.reviews-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.review-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+
+.review-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.review-item p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Add any additional styles or modifications here */
 
 /* Responsive styles */
 @media screen and (max-width: 767px) {
