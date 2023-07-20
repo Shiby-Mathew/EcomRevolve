@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Amazon",
+    "imageSrc": "amazon.png",
+    "altText": "Amazon Marketplace"
+  },
+  {
+    "name": "eBay",
+    "imageSrc": "ebay.png",
+    "altText": "eBay Marketplace"
+  },
+  {
+    "name": "Catch",
+    "imageSrc": "catch.png",
+    "altText": "Catch Marketplace"
+  },
+
+  {
+    "name": "Amazon",
+    "imageSrc": "amazon.png",
+    "altText": "Amazon Marketplace"
+  },
+  {
+    "name": "eBay",
+    "imageSrc": "ebay.png",
+    "altText": "eBay Marketplace"
+  },
+  {
+    "name": "Catch",
+    "imageSrc": "catch.png",
+    "altText": "Catch Marketplace"
+  }
+]

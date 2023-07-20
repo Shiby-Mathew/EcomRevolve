@@ -1,12 +1,12 @@
 [
   {
-    "name": "e-Bay",
-    "description": "long Dress",
+    "name": "New party",
+    "description": "very good service",
     "reviews": []
   },
   {
-    "name": "Amazon",
-    "description": "Shirt",
+    "name": "Third party",
+    "description": "Cheap Price",
     "reviews": []
   }
 ]
