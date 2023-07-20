@@ -8,21 +8,21 @@ const marketplaces = [
     name: "Amazon",
     imageSrc: require("../images/amazon.png"),
     altText: "Amazon Marketplace",
-    link: "/marketplace/1",
+    link: "/marketplace/amazon",
   },
   {
     id: 2,
     name: "eBay",
     imageSrc: require("../images/ebay.png"),
     altText: "eBay Marketplace",
-    link: "/marketplace/2",
+    link: "/marketplace/ebay",
   },
   {
     id: 3,
     name: "Catch",
     imageSrc: require("../images/catch.png"),
     altText: "Catch Marketplace",
-    link: "/marketplace/3",
+    link: "/marketplace/catch",
   },
 ];
 
