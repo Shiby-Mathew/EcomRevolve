@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User,Marketplace,List } = require("../models");
+const { User, Marketplace } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -8,13 +8,6 @@ const resolvers = {
       return Marketplace.find();
     },
 
-    lists: async () => {
-      console.log("inside the lists");
-
-      return List.find();
-      // console.log(value);
-      //
-    },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id });

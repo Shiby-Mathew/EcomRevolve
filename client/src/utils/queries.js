@@ -10,23 +10,24 @@ export const QUERY_ME = gql`
   }
 `;
 
-export const QUERY_LISTS = gql`
-  query lists {
-    lists {
+export const QUERY_MARKETPLACES = gql`
+  query marketplaces {
+    marketplaces {
       _id
       name
+      description
       imageSrc
       altText
     }
   }
 `;
 
-export const QUERY_MARKETPLACES = gql`
-  query me {
-    marketplaces {
-      _id
-      name
-      description
-    }
-  }
-`;
+// export const QUERY_MARKETPLACES = gql`
+//   query me {
+//     marketplaces {
+//       _id
+//       name
+//       description
+//     }
+//   }
+// `;
