@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_MARKETPLACES } from "../utils/queries";
 
-
 function Home() {
   const { loading, data } = useQuery(QUERY_MARKETPLACES);
 
@@ -24,7 +23,7 @@ function Home() {
           <div className="marketplace-list">
             {marketplaces.map((marketplace) => (
               <div className="marketplace-item" key={marketplace.id}>
-                <Link to={marketplace.id}>
+                <Link to={`marketplace/${marketplace.name}`}>
                   <img src={marketplace.imageSrc} alt={marketplace.altText} />
                 </Link>
               </div>
