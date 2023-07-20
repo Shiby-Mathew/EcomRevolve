@@ -2,38 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { useQuery } from "@apollo/client";
-import { QUERY_LISTS } from "../utils/queries";
-// import "./Home.css";
-
-// const marketplaces = [
-//   {
-//     id: 1,
-//     name: "Amazon",
-//     imageSrc: require("../images/amazon.png"),
-//     altText: "Amazon Marketplace",
-//     link: "/marketplace/1",
-//   },
-//   {
-//     id: 2,
-//     name: "eBay",
-//     imageSrc: require("../images/ebay.png"),
-//     altText: "eBay Marketplace",
-//     link: "/marketplace/2",
-//   },
-//   {
-//     id: 3,
-//     name: "Catch",
-//     imageSrc: require("../images/catch.png"),
-//     altText: "Catch Marketplace",
-//     link: "/marketplace/3",
-//   },
-// ];
+import { QUERY_MARKETPLACES } from "../utils/queries";
 
 function Home() {
-  const { loading, data } = useQuery(QUERY_LISTS);
+  const { loading, data } = useQuery(QUERY_MARKETPLACES);
 
   console.log(data);
-  const marketplaces = data?.lists || [];
+  const marketplaces = data?.marketplaces || [];
 
   console.log(marketplaces);
   return (
