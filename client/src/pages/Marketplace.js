@@ -72,7 +72,7 @@ function Marketplace() {
     <div className="marketplace-content">
       <div className="marketplace-container">
         <a href={currentMarketplace.link}>
-          <h1 className="marketplace-heading">{currentMarketplace.name}</h1>
+          <h1 className="marketplace-heading">{currentMarketplace.officalname}</h1>
         </a>
         <div className="marketplace-info">
           <p>

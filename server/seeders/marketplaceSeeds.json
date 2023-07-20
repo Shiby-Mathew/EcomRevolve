@@ -1,38 +1,47 @@
 [
   {
-    "name": "Amazon",
-    "description": "Abcd",
+    "name": "amazon",
     "imageSrc": "amazon.png",
-    "altText": "Amazon Marketplace"
+    "altText": "Amazon Marketplace",
+    "officalname": "Amazon Australia",
+    "link": "https://www.amazon.com.au/",
+    "shippingTime": "1-3 business days",
+    "productCategories": ["Books", "Electronics", "Beauty", "Kitchen"],
+    "services": [
+      "Amazon Prime",
+      "Free Shipping on Eligible Orders",
+      "Easy Returns",
+      "Customer Support 24/7"
+    ]
   },
   {
-    "name": "eBay",
-    "description": "AXYZ",
+    "name": "ebay",
     "imageSrc": "ebay.png",
-    "altText": "eBay Marketplace"
+    "altText": "eBay Marketplace",
+    "officalname": "eBay Australia",
+    "link": "https://www.ebay.com.au/",
+    "shippingTime": "2-6 business days",
+    "productCategories": ["Electronics", "Fashion", "Home & Garden", "Toys"],
+    "services": [
+      "Buyer Protection",
+      "Click & Collect",
+      "Easy Returns",
+      "eBay Plus Subscription"
+    ]
   },
   {
-    "name": "Catch",
-    "description": "ALMK",
+    "name": "catch",
     "imageSrc": "catch.png",
-    "altText": "Catch Marketplace"
-  },
-  {
-    "name": "eBay",
-    "description": "BCD",
-    "imageSrc": "ebay.png",
-    "altText": "eBay Marketplace"
-  },
-  {
-    "name": "Catch",
-    "description": "KLM",
-    "imageSrc": "catch.png",
-    "altText": "Catch Marketplace"
-  },
-  {
-    "name": "Amazon",
-    "description": "XYZ",
-    "imageSrc": "amazon.png",
-    "altText": "Amazon Marketplace"
+    "altText": "Catch Marketplace",
+    "officalname": "Catch",
+    "link": "https://www.catch.com.au/",
+    "shippingTime": "3-7 business days",
+    "productCategories": ["Fashion", "Home & Kitchen", "Sports", "Groceries"],
+    "services": [
+      "Club Catch Membership",
+      "Express Delivery",
+      "30-Day Free Returns",
+      "Customer Service"
+    ]
   }
 ]
