@@ -10,15 +10,19 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
+
   type Marketplace {
     _id: ID
     name: String!
-    description: String!
+    description: String
+    imageSrc: String!
+    altText: String
   }
 
   type Query {
     me: User
     marketplaces: [Marketplace]
+   
   }
 
   type Mutation {

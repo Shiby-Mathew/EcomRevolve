@@ -1,12 +1,38 @@
 [
   {
-    "name": "e-Bay",
-    "description": "long Dress",
-    "reviews": []
+    "name": "Amazon",
+    "description": "Abcd",
+    "imageSrc": "amazon.png",
+    "altText": "Amazon Marketplace"
+  },
+  {
+    "name": "eBay",
+    "description": "AXYZ",
+    "imageSrc": "ebay.png",
+    "altText": "eBay Marketplace"
+  },
+  {
+    "name": "Catch",
+    "description": "ALMK",
+    "imageSrc": "catch.png",
+    "altText": "Catch Marketplace"
+  },
+  {
+    "name": "eBay",
+    "description": "BCD",
+    "imageSrc": "ebay.png",
+    "altText": "eBay Marketplace"
+  },
+  {
+    "name": "Catch",
+    "description": "KLM",
+    "imageSrc": "catch.png",
+    "altText": "Catch Marketplace"
   },
   {
     "name": "Amazon",
-    "description": "Shirt",
-    "reviews": []
+    "description": "XYZ",
+    "imageSrc": "amazon.png",
+    "altText": "Amazon Marketplace"
   }
 ]

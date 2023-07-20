@@ -10,6 +10,12 @@ const marketplaceSchema = new Schema({
   description: {
     type: String,
   },
+  imageSrc: {
+    type: String,
+  },
+  altText: {
+    type: String,
+  },
   reviews: [reviewSchema],
 });
 const Marketplace = model("Marketplace", marketplaceSchema);

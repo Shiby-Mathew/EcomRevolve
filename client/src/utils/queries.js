@@ -11,11 +11,23 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_MARKETPLACES = gql`
-  query me {
+  query marketplaces {
     marketplaces {
       _id
       name
       description
+      imageSrc
+      altText
     }
   }
 `;
+
+// export const QUERY_MARKETPLACES = gql`
+//   query me {
+//     marketplaces {
+//       _id
+//       name
+//       description
+//     }
+//   }
+// `;
