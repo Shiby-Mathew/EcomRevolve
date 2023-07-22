@@ -5,7 +5,8 @@ export const QUERY_ME = gql`
     me {
       _id
       username
-      username
+      email
+      password
     }
   }
 `;
@@ -14,8 +15,7 @@ export const QUERY_MARKETPLACES = gql`
   query marketplaces {
     marketplaces {
       _id
-      name
-      description
+      name      
       imageSrc
       altText
     }
