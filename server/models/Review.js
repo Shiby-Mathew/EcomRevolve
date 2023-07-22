@@ -26,12 +26,12 @@ const reviewSchema = new Schema({
   //     ref: "Marketplace",
   //   },
   // ],
-  // user: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "User",
-  //   },
-  // ],
+  user: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
 });
 
 const Review = model("Review", reviewSchema);
