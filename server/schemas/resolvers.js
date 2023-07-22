@@ -6,16 +6,12 @@ const resolvers = {
   Query: {
     marketplaces: async () => {
       console.log("market places");
-      return Marketplace.find();
+      return Marketplace.find().populate("reviews");
     },
-    reviews: async () => {
+    viewReview: async (parent, { marketplaceId }) => {
       console.log("reviews");
-      return Review.find();
+      return Marketplace.findOne({ _id: marketplaceId }).populate("reviews");
     },
-    // reviews: async (parent,{marketplaceId}) => {
-    //   console.log("reviews");
-    //   return Marketplace.findOne(name:marketplaceId);
-    // },
 
     me: async (parent, args, context) => {
       if (context.user) {
@@ -57,28 +53,45 @@ const resolvers = {
 
     // Add review and update marketplace
 
-    // addReview: async (parent, { marketplaceId, newReview }) => {
-    //   console.log("inside add review");
-    //   console.log(marketplaceId);
-    //   console.log(newReview);
-    //   const review = await Review.create({ newReview });
-    //   console.log("newReview");
-    //   console.log("review" + review);
-    //   await Marketplace.findOneAndUpdate(
-    //     { _id: marketplaceId },
-    //     { $addToSet: { reviews: review._id } }
-    //   );
-    //   console.log(review);
-    //   return review;
-    // },
+    addReview: async (parent, { marketplaceId, newReview }) => {
+      console.log("inside add review");
+      console.log(marketplaceId);
+      console.log(newReview);
+      const review = await Review.create({ ...newReview });
+      console.log("newReview");
+      console.log("review" + review);
+      await Marketplace.findOneAndUpdate(
+        { _id: marketplaceId },
+        { $addToSet: { reviews: review._id } }
+      );
+      console.log("hello");
+      return review;
+    },
 
-    // addReview: async (parent, { newReview }) => {
-    //   console.log("inside add review");
-    //   console.log();
-    //   console.log(newReview);
-    //   const review = await Review.create({ newReview });
-    //   console.log(review);
-    // },
+    removeReview: async (parent, { marketplaceId, reviewId }) => {
+      //if(context.user)
+      console.log(marketplaceId);
+      console.log(reviewId);
+
+      const review = await Review.findOneAndDelete({
+        _id: reviewId,
+      });
+      await Marketplace.findOneAndUpdate(
+        { _id: marketplaceId },
+        { $pull: { reviews: reviewId } }
+      );
+
+      return review;
+    },
+
+    editReview: async (parent, { reviewId, updatedReview }) => {
+      const updateReview = await Review.findOneAndUpdate(
+        { _id: reviewId },
+        { $set: { reviews: updatedReview } }
+      );
+      
+      return updateReview;
+    },
   },
 };
 module.exports = resolvers;

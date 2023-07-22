@@ -3,11 +3,12 @@ const { Schema, model } = require("mongoose");
 const reviewSchema = new Schema({
   title: {
     type: String,
-    required: true,
+    // required: true,
+    trim: true,
   },
-  reviews: {
+  review: {
     type: String,
-    required: true,
+    // required: true,
   },
   created_date: {
     type: Date,

@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String!
     email: String
     password: String
-    reviews: [Review]
+   
   }
 
   type Auth {
@@ -17,7 +17,7 @@ const typeDefs = gql`
   type Marketplace {
     _id: ID
     name: String!
-    imageSrc: String!
+    imageSrc: String
     altText: String
     reviews: [Review]
   }
@@ -25,7 +25,7 @@ const typeDefs = gql`
   type Review {
     _id: ID
     title: String
-    reviews: String
+    review: String
     created_date: String
     location: String
     shipping_time: String
@@ -34,7 +34,7 @@ const typeDefs = gql`
   input ReviewInput {
     _id: ID
     title: String
-    reviews: String
+    review: String
     created_date: String
     location: String
     shipping_time: String
@@ -42,22 +42,18 @@ const typeDefs = gql`
   type Query {
     me: User
     marketplaces: [Marketplace]
-    reviews: [Review]
-    viewReview(marketplaceId: String): Marketplace
+    viewReview(marketplaceId: ID!): Marketplace
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    # addReview(newReview: ReviewInput): Review
 
-    # addReview(marketplaceId: ID!, newReview: ReviewInput): Review
-    editReview(
-      marketplaceId: ID!
-      reviewId: ID!
-      newReview: ReviewInput
-    ): Marketplace
-    removeReview(marketplaceId: ID!, reviewId: ID!): Marketplace
+    addReview(marketplaceId: ID!, newReview: ReviewInput): Review
+
+    editReview(reviewId: ID!, updatedReview: ReviewInput): Review
+
+    removeReview(marketplaceId: ID!, reviewId: ID!): Review
   }
 `;
 

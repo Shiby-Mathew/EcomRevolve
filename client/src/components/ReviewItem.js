@@ -6,7 +6,7 @@ function ReviewItem({ review }) {
     <div className="review-item">
       <h3 className="title">{review.title}</h3>
       <p className="description">{review.description}</p>
-      <p className="author">By: {review.author}</p>
+      <p className="author">By: {review.created_date}</p>
     </div>
   );
 }

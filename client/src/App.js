@@ -48,7 +48,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route
-            path="/marketplace/:marketplaceId"
+            path="/marketplace/:marketplaceId/:marketplacename"
             element={<Marketplace />}
           />{" "}
           {/* Dynamic route for marketplace pages */}
