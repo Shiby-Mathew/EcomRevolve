@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Awesome",
+    "reviews": "Very good customer service",
+    "location": "Sydney",
+    "shipping_time": "2-3 working days"
+  },
+  {
+    "title": "Nice",
+    "reviews": "Very good service",
+    "location": "Melbourne",
+    "shipping_time": "2-3 working days"
+  },
+  {
+    "title": "Cool",
+    "reviews": "Very nice",
+    "location": "Perth",
+    "shipping_time": "2-3 working days"
+  }
+]

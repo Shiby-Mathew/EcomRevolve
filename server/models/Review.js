@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const reviewSchema = new Schema({
   title: {
@@ -19,6 +19,20 @@ const reviewSchema = new Schema({
   shipping_time: {
     type: String,
   },
+  // marketplaces: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Marketplace",
+  //   },
+  // ],
+  // user: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "User",
+  //   },
+  // ],
 });
 
-module.exports = reviewSchema;
+const Review = model("Review", reviewSchema);
+
+module.exports = Review;

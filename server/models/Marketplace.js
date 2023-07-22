@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const reviewSchema = require("./Review");
+//const reviewSchema = require("./Review");
 
 const marketplaceSchema = new Schema({
   name: {
@@ -13,27 +13,12 @@ const marketplaceSchema = new Schema({
   altText: {
     type: String,
   },
-  officalname: {
-    type: String,
-  },
-  link: {
-    type: String,
-  },
-
-  shippingTime: {
-    type: String,
-  },
-  productCategories: [
+  reviews: [
     {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: 'Review',
     },
   ],
-  services: [
-    {
-      type: String,
-    },
-  ],
-  reviews: [reviewSchema],
 });
 const Marketplace = model("Marketplace", marketplaceSchema);
 

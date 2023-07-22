@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String!
     email: String
     password: String
-    marketplaces: [Marketplace]
+    reviews: [Review]
   }
 
   type Auth {
@@ -17,11 +17,11 @@ const typeDefs = gql`
   type Marketplace {
     _id: ID
     name: String!
-    description: String
     imageSrc: String!
     altText: String
     reviews: [Review]
   }
+
   type Review {
     _id: ID
     title: String
@@ -42,12 +42,16 @@ const typeDefs = gql`
   type Query {
     me: User
     marketplaces: [Marketplace]
+    reviews: [Review]
+    viewReview(marketplaceId: String): Marketplace
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addReview(marketplaceId: ID!, newReview: ReviewInput): Marketplace
+    # addReview(newReview: ReviewInput): Review
+
+    # addReview(marketplaceId: ID!, newReview: ReviewInput): Review
     editReview(
       marketplaceId: ID!
       reviewId: ID!
