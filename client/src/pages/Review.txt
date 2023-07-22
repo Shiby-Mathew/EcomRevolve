@@ -1,0 +1,37 @@
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import { addReview } from "../services/reviewService";
+import ReviewForm from "./ReviewForm"; // Make sure the file path is correct
+
+function Reviews() {
+  const { user } = useContext(AuthContext);
+  const [reviews, setReviews] = useState([]);
+
+  const handleAddReview = (reviewData) => {
+    // Implement the logic to add a review using the 'addReview' function
+    // from the 'reviewService' file.
+    // You can use the 'reviewData' object which contains the comment and other data.
+    // Sample implementation (replace this with your actual implementation):
+    addReview(reviewData)
+      .then((newReview) => {
+        // Handle the success case, for example, update the UI with the new review
+        setReviews([...reviews, newReview]);
+        console.log("Review added successfully:", newReview);
+      })
+      .catch((error) => {
+        // Handle the error case, for example, show an error message or handle errors gracefully
+        console.error("Error adding review:", error.message);
+      });
+  };
+
+  return (
+    <div className="reviews-content">
+      {/* Render the ReviewForm component and pass the handleAddReview function */}
+      <ReviewForm onAddReview={handleAddReview} />
+      {/* Render the list of reviews */}
+      {/* ... */}
+    </div>
+  );
+}
+
+export default Reviews;

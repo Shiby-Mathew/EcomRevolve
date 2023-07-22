@@ -13,18 +13,15 @@ import Footer from "./components/common/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Marketplace from "./pages/Marketplace"; // Import the Marketplace component
-
-// Saving token in the local storage
+import Marketplace from "./pages/Marketplace";
+import ReviewForm from "./pages/ReviewForm";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
   const token = localStorage.getItem("id_token");
-  // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
@@ -52,6 +49,10 @@ function App() {
             element={<Marketplace />}
           />{" "}
           {/* Dynamic route for marketplace pages */}
+          <Route
+            path="/marketplace/:marketplaceId/add-review"
+            element={<ReviewForm />}
+          />
         </Routes>
         <Footer />
       </Router>
