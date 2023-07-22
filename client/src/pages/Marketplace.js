@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchReviews } from "../services/reviewService";
-import ReviewList from "../components/ReviewList";
+ import ReviewList from "../components/ReviewList";
+import { useQuery } from "@apollo/client";
+import { QUERY_REVIEWS } from "../utils/queries";
 
 function Marketplace() {
-  const { marketplaceId } = useParams();
+  const { marketplaceId, marketplacename } = useParams();
+  console.log(marketplaceId, marketplacename);
+
   const [reviews, setReviews] = useState([]);
+
+  // const { loading, data } = useQuery(QUERY_REVIEWS, {
+  //   // pass URL parameter
+  //   variables: { marketplaceId: marketplaceId },
+  // });
+
+  // const reviews = data?.viewReview || {};
+  // console.log(reviews);
 
   useEffect(() => {
     const getReviews = async () => {
@@ -61,7 +73,7 @@ function Marketplace() {
     },
   };
 
-  const currentMarketplace = marketplaceData[marketplaceId];
+  const currentMarketplace = marketplaceData[marketplacename];
 
   // Check if currentMarketplace exists before rendering
   if (!currentMarketplace) {
@@ -72,7 +84,7 @@ function Marketplace() {
     <div className="marketplace-content">
       <div className="marketplace-container">
         <a href={currentMarketplace.link}>
-          <h1 className="marketplace-heading">{currentMarketplace.officalname}</h1>
+          <h1 className="marketplace-heading">{currentMarketplace.name}</h1>
         </a>
         <div className="marketplace-info">
           <p>

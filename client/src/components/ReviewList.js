@@ -3,6 +3,8 @@ import ReviewItem from "./ReviewItem";
 // import "./ReviewList.css";
 
 function ReviewList({ reviews }) {
+  // const [reviews, setReviews] = useState([]);
+
   return (
     <div className="review-list">
       {reviews.map((review) => (

@@ -15,19 +15,22 @@ export const QUERY_MARKETPLACES = gql`
   query marketplaces {
     marketplaces {
       _id
-      name      
+      name
       imageSrc
       altText
     }
   }
 `;
 
-// export const QUERY_MARKETPLACES = gql`
-//   query me {
-//     marketplaces {
-//       _id
-//       name
-//       description
-//     }
-//   }
-// `;
+export const QUERY_REVIEWS = gql`
+  query viewReview($marketplaceId: ID!) {
+    viewReview(marketplaceId: $marketplaceId) {
+      _id
+      title
+      review
+      created_date
+      location
+      shipping_time
+    }
+  }
+`;
