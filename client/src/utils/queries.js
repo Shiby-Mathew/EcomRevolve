@@ -32,8 +32,7 @@ export const QUERY_REVIEWS = gql`
         title
         review
         created_date
-        location
-        shipping_time
+        
       }
     }
   }

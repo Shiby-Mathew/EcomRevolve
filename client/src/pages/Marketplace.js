@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
-
 // import { fetchReviews } from "../services/reviewService";
-
 import ReviewList from "../components/ReviewList";
 import { useQuery } from "@apollo/client";
 import { QUERY_REVIEWS } from "../utils/queries";
@@ -11,16 +9,18 @@ function Marketplace() {
   const { marketplaceId, marketplacename } = useParams();
   console.log(marketplaceId, marketplacename);
 
-  //const [reviews, setReviews] = useState([]);
+  //// const [reviews, setReviews] = useState([]);
 
   const { loading, data } = useQuery(QUERY_REVIEWS, {
     // pass URL parameter
     variables: { marketplaceId: marketplaceId },
   });
 
-  const reviews = data?.viewReview || {};
+  // const { loading, data } = useQuery(QUERY_REVIEWS, {
+  //   // pass URL parameter
+  //   variables: { marketplaceId: marketplaceId },
+  // });
 
-  // const reviews = marketPlace.reviews;
   console.log(reviews);
 
   // useEffect(() => {
@@ -112,18 +112,28 @@ function Marketplace() {
           </ul>
         </div>
       </div>
-      <div className="customer-reviews-container">
-        <div className="customer-reviews">
-          <h2 className="reviews-heading">Customer Reviews</h2>
-          <ReviewList reviews={reviews} />
-          <a
-            href={`/marketplace/${marketplaceId}/add-review`}
-            className="add-review-button"
-          >
-            Add a Review
-          </a>
-        </div>
+
+      {loading ? (
+          <>
+            <div>Loading...</div>
+          </>
+        ) : (
+          <>
+
+      <div className="customer-reviews">
+        <h2 className="reviews-heading">Customer Reviews</h2>
+        <ReviewList reviews={reviews} />
+        <Link
+          to={`/marketplace/${marketplaceId}/add-review`}
+          className="add-review-button"
+        >
+          Add a Review
+        </Link>
       </div>
+      </>
+      )}
+
+
     </div>
   );
 }

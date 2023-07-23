@@ -7,7 +7,7 @@ function ReviewItem({ review }) {
     <div className="review-item">
       <h3 className="title">{review.title}</h3>
       <p className="description">{review.review}</p>
-      <p className="author"> {review.location}</p>
+
       {/* <p className="author">By: {review.author}</p> */}
     </div>
   );
