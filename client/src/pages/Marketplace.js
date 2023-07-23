@@ -16,11 +16,6 @@ function Marketplace() {
     variables: { marketplaceId: marketplaceId },
   });
 
-  const { loading, data } = useQuery(QUERY_REVIEWS, {
-    // pass URL parameter
-    variables: { marketplaceId: marketplaceId },
-  });
-
   // const { loading, data } = useQuery(QUERY_REVIEWS, {
   //   // pass URL parameter
   //   variables: { marketplaceId: marketplaceId },
