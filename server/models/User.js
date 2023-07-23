@@ -21,13 +21,6 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  // marketplaces: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: 'Marketplace',
-  //   },
-  // ],
- 
 });
 
 // set up pre-save middleware to create password

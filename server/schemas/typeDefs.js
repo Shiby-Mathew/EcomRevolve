@@ -6,7 +6,6 @@ const typeDefs = gql`
     username: String!
     email: String
     password: String
-   
   }
 
   type Auth {
@@ -27,8 +26,6 @@ const typeDefs = gql`
     title: String
     review: String
     created_date: String
-    location: String
-    shipping_time: String
   }
 
   input ReviewInput {
@@ -36,8 +33,6 @@ const typeDefs = gql`
     title: String
     review: String
     created_date: String
-    location: String
-    shipping_time: String
   }
   type Query {
     me: User

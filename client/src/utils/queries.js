@@ -26,11 +26,14 @@ export const QUERY_REVIEWS = gql`
   query viewReview($marketplaceId: ID!) {
     viewReview(marketplaceId: $marketplaceId) {
       _id
-      title
-      review
-      created_date
-      location
-      shipping_time
+      name
+      reviews {
+        _id
+        title
+        review
+        created_date
+        
+      }
     }
   }
 `;
