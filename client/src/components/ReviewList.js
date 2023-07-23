@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import ReviewItem from "./ReviewItem";
 // import "./ReviewList.css";
 
 function ReviewList({ reviews }) {
-  // const [reviews, setReviews] = useState([]);
+  console.log(reviews);
+  console.log(reviews._id);
+  console.log(reviews.name);
+  
+  const viewReviews = reviews.reviews;
+  console.log(viewReviews);
+
+  const [review, setReview] = useState([]);
 
   return (
     <div className="review-list">
-      {reviews.map((review) => (
-        <ReviewItem key={review.id} review={review} />
+      {viewReviews.map((review) => (
+        <ReviewItem key={review._id} review={review} />
       ))}
     </div>
   );
