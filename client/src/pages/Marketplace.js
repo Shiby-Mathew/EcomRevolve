@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchReviews } from "../services/reviewService";
- import ReviewList from "../components/ReviewList";
+import ReviewList from "../components/ReviewList";
 import { useQuery } from "@apollo/client";
 import { QUERY_REVIEWS } from "../utils/queries";
 
@@ -108,15 +108,17 @@ function Marketplace() {
           </ul>
         </div>
       </div>
-      <div className="customer-reviews">
-        <h2 className="reviews-heading">Customer Reviews</h2>
-        <ReviewList reviews={reviews} />
-        <Link
-          to={`/marketplace/${marketplaceId}/add-review`}
-          className="add-review-button"
-        >
-          Add a Review
-        </Link>
+      <div className="customer-reviews-container">
+        <div className="customer-reviews">
+          <h2 className="reviews-heading">Customer Reviews</h2>
+          <ReviewList reviews={reviews} />
+          <a
+            href={`/marketplace/${marketplaceId}/add-review`}
+            className="add-review-button"
+          >
+            Add a Review
+          </a>
+        </div>
       </div>
     </div>
   );

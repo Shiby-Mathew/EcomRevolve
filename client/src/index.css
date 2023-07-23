@@ -142,8 +142,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Marketplace.css */
-
 .marketplace-container {
   max-width: 800px;
   margin: 0 auto;
@@ -221,8 +219,17 @@ h1 {
   font-weight: bold;
 }
 
+.customer-reviews-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 .customer-reviews {
-  margin-top: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .reviews-heading {
@@ -250,6 +257,23 @@ h1 {
 .review-item p {
   font-size: 16px;
   color: #555;
+}
+
+.add-review-button {
+  margin: 5px;
+  padding: 5px;
+  text-decoration: none;
+  border: #0fa6f7 solid;
+  color: #000000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-review-button:hover {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #144e89;
+  transition: font-size 0.3s, margin-bottom 0.3s, color 0.3s;
 }
 
 /* Add any additional styles or modifications here */
@@ -314,4 +338,53 @@ h1 {
 
 .signup-form button:hover {
   background-color: #144e89;
+}
+
+/*****Review Form ******/
+.review-container {
+  max-width: 800px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.review-container textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.submit-review-button {
+  width: max-content;
+  padding: 10px;
+  border: #0fa6f7 solid;
+  color: #000000;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-review-button:hover {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #144e89;
+  transition: font-size 0.3s, margin-bottom 0.3s, color 0.3s;
 }

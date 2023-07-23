@@ -16,17 +16,18 @@ function ReviewForm({ onAddReview }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="comment">Add Your Review:</label>
+      <div className="review-container">
+        <h2>Add your review:</h2>
         <textarea
-          id="comment"
-          name="comment"
+          className="review-textarea"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           required
         ></textarea>
+        <a href="#" onClick={handleSubmit} className="submit-review-button">
+          Submit Review
+        </a>
       </div>
-      <button type="submit">Submit Review</button>
     </form>
   );
 }
