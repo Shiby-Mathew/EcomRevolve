@@ -9,33 +9,13 @@ function Marketplace() {
   const { marketplaceId, marketplacename } = useParams();
   console.log(marketplaceId, marketplacename);
 
-  //// const [reviews, setReviews] = useState([]);
-
   const { loading, data } = useQuery(QUERY_REVIEWS, {
     // pass URL parameter
     variables: { marketplaceId: marketplaceId },
   });
 
-  // const { loading, data } = useQuery(QUERY_REVIEWS, {
-  //   // pass URL parameter
-  //   variables: { marketplaceId: marketplaceId },
-  // });
-
+  const reviews = data?.viewReview || {};
   console.log(reviews);
-
-  // useEffect(() => {
-  //   const getReviews = async () => {
-  //     try {
-  //       // Replace 'fetchReviews()' with your actual function to fetch reviews for the specific marketplaceId
-  //       const reviewsData = await fetchReviews(marketplaceId);
-  //       setReviews(reviewsData);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   getReviews();
-  // }, [marketplaceId]);
 
   // Placeholder marketplace data
   const marketplaceData = {
@@ -114,26 +94,23 @@ function Marketplace() {
       </div>
 
       {loading ? (
-          <>
-            <div>Loading...</div>
-          </>
-        ) : (
-          <>
-
-      <div className="customer-reviews">
-        <h2 className="reviews-heading">Customer Reviews</h2>
-        <ReviewList reviews={reviews} />
-        <Link
-          to={`/marketplace/${marketplaceId}/add-review`}
-          className="add-review-button"
-        >
-          Add a Review
-        </Link>
-      </div>
-      </>
+        <>
+          <div>Loading...</div>
+        </>
+      ) : (
+        <>
+          <div className="customer-reviews">
+            <h2 className="reviews-heading">Customer Reviews</h2>
+            <ReviewList reviews={reviews} />
+            <Link
+              to={`/marketplace/${marketplaceId}/add-review`}
+              className="add-review-button"
+            >
+              Add a Review
+            </Link>
+          </div>
+        </>
       )}
-
-
     </div>
   );
 }
