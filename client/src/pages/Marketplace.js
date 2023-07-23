@@ -9,14 +9,22 @@ function Marketplace() {
   const { marketplaceId, marketplacename } = useParams();
   console.log(marketplaceId, marketplacename);
 
-  // const [reviews, setReviews] = useState([]);
+  //// const [reviews, setReviews] = useState([]);
 
   const { loading, data } = useQuery(QUERY_REVIEWS, {
     // pass URL parameter
     variables: { marketplaceId: marketplaceId },
   });
 
-  const reviews = data?.viewReview || {};
+  const { loading, data } = useQuery(QUERY_REVIEWS, {
+    // pass URL parameter
+    variables: { marketplaceId: marketplaceId },
+  });
+
+  // const { loading, data } = useQuery(QUERY_REVIEWS, {
+  //   // pass URL parameter
+  //   variables: { marketplaceId: marketplaceId },
+  // });
 
   console.log(reviews);
 

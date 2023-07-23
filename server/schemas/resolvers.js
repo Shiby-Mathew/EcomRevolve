@@ -5,11 +5,11 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     marketplaces: async () => {
-      console.log("market places");
+      //console.log("market places");
       return Marketplace.find().populate("reviews");
     },
     viewReview: async (parent, { marketplaceId }) => {
-      console.log("reviews");
+      //console.log("reviews");
       return Marketplace.findOne({ _id: marketplaceId }).populate("reviews");
     },
 
@@ -42,7 +42,7 @@ const resolvers = {
     },
 
     addUser: async (parent, { username, email, password }) => {
-      console.log(" inside");
+      //console.log(" inside");
       const user = await User.create({ username, email, password });
       console.log(user);
 
@@ -54,24 +54,24 @@ const resolvers = {
     // Add review and update marketplace
 
     addReview: async (parent, { marketplaceId, newReview }) => {
-      console.log("inside add review");
-      console.log(marketplaceId);
-      console.log(newReview);
+      //console.log("inside add review");
+      //console.log(marketplaceId);
+      //console.log(newReview);
       const review = await Review.create({ ...newReview });
-      console.log("newReview");
-      console.log("review" + review);
+      //console.log("newReview");
+      //console.log("review" + review);
       await Marketplace.findOneAndUpdate(
         { _id: marketplaceId },
         { $addToSet: { reviews: review._id } }
       );
-      console.log("hello");
+      //console.log("hello");
       return review;
     },
 
     removeReview: async (parent, { marketplaceId, reviewId }) => {
       //if(context.user)
-      console.log(marketplaceId);
-      console.log(reviewId);
+     // console.log(marketplaceId);
+      //console.log(reviewId);
 
       const review = await Review.findOneAndDelete({
         _id: reviewId,
