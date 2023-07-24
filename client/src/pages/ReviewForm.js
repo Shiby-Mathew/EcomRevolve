@@ -45,7 +45,7 @@ const ReviewForm = () => {
       {Auth.loggedIn() ? (
         <form onSubmit={handleSubmit}>
           <div className="review-container">
-            <h2>Title:</h2>
+            <h2>Review Title</h2>
             <input
               className="input"
               value={title}
@@ -55,7 +55,7 @@ const ReviewForm = () => {
               placeholder="Please enter a title"
             />
 
-            <h2>Add your review:</h2>
+            <h2>Your Review Content</h2>
             <textarea
               className="review-textarea"
               value={review}
@@ -70,10 +70,9 @@ const ReviewForm = () => {
           </div>
         </form>
       ) : (
-        <p>
+        <p className="review-message">
           You need to be logged in to add reviews. Please{" "}
-          <Link to="/login">login</Link> or{" "}
-          <Link to="/register">Register.</Link>
+          <a href="/login">Login</a> or <a href="/register">Register</a>.
         </p>
       )}
     </div>
