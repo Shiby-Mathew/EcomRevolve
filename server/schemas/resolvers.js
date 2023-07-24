@@ -12,6 +12,10 @@ const resolvers = {
       //console.log("reviews");
       return Marketplace.findOne({ _id: marketplaceId }).populate("reviews");
     },
+    editreviews: async (parent, { reviewId }) => {
+      //console.log("reviews");
+      return Review.findOne({ _id: reviewId });
+    },
 
     me: async (parent, args, context) => {
       if (context.user) {

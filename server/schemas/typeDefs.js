@@ -39,6 +39,7 @@ const typeDefs = gql`
     me: User
     marketplaces: [Marketplace]
     viewReview(marketplaceId: ID!): Marketplace
+    editreviews(reviewId: ID!): Review
   }
 
   type Mutation {
