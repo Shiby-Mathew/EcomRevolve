@@ -1,35 +1,81 @@
 import React, { useState } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 
-function ReviewForm({ onAddReview }) {
-  const [comment, setComment] = useState("");
+import { ADD_REVIEW } from "../utils/mutations";
+import Auth from "../utils/auth";
 
-  const handleSubmit = (e) => {
+const ReviewForm = () => {
+  const { marketplaceId } = useParams();
+  const [review, setReview] = useState("");
+  const [title, setTitle] = useState("");
+  const navigate = useNavigate();
+
+  const [addReview, { error }] = useMutation(ADD_REVIEW);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const reviewData = {
-      comment,
-      // Others
-    };
+    console.log(review, title);
 
-    onAddReview(reviewData);
-    setComment("");
+    try {
+      const reviewData = await addReview({
+        variables: {
+          marketplaceId,
+          newReview: {
+            title,
+            review,
+            author: Auth.getProfile().data.username,
+          },
+        },
+      });
+
+      setTitle("");
+      setReview("");
+      window.location.reload();
+      navigate(-1);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="review-container">
-        <h2>Add your review:</h2>
-        <textarea
-          className="review-textarea"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          required
-        ></textarea>
-        <a href="#" onClick={handleSubmit} className="submit-review-button">
-          Submit Review
-        </a>
-      </div>
-    </form>
+    <div>
+      {Auth.loggedIn() ? (
+        <form onSubmit={handleSubmit}>
+          <div className="review-container">
+            <h2>Title:</h2>
+            <input
+              className="input"
+              value={title}
+              name="title"
+              onChange={(e) => setTitle(e.target.value)}
+              type="title"
+              placeholder="Please enter a title"
+            />
+
+            <h2>Add your review:</h2>
+            <textarea
+              className="review-textarea"
+              value={review}
+              name="review"
+              placeholder="Please enter a comment"
+              onChange={(e) => setReview(e.target.value)}
+              required
+            ></textarea>
+            <a href="#" onClick={handleSubmit} className="submit-review-button">
+              Submit Review
+            </a>
+          </div>
+        </form>
+      ) : (
+        <p>
+          You need to be logged in to add reviews. Please{" "}
+          <Link to="/login">login</Link> or{" "}
+          <Link to="/register">Register.</Link>
+        </p>
+      )}
+    </div>
   );
-}
+};
 
 export default ReviewForm;

@@ -13,9 +13,8 @@ function Marketplace() {
     // pass URL parameter
     variables: { marketplaceId: marketplaceId },
   });
-
-  const reviews = data?.viewReview || {};
-  console.log(reviews);
+  const markeplaceData = data?.viewReview || {};
+  console.log(markeplaceData);
 
   // Placeholder marketplace data
   const marketplaceData = {
@@ -101,7 +100,8 @@ function Marketplace() {
         <>
           <div className="customer-reviews">
             <h2 className="reviews-heading">Customer Reviews</h2>
-            <ReviewList reviews={reviews} />
+            <ReviewList markeplaceData={markeplaceData} />
+
             <Link
               to={`/marketplace/${marketplaceId}/add-review`}
               className="add-review-button"

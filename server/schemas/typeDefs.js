@@ -26,13 +26,14 @@ const typeDefs = gql`
     title: String
     review: String
     created_date: String
+    author: String
   }
 
   input ReviewInput {
-    _id: ID
     title: String
     review: String
     created_date: String
+    author: String
   }
   type Query {
     me: User

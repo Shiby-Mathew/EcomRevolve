@@ -31,8 +31,8 @@ export const QUERY_REVIEWS = gql`
         _id
         title
         review
+        author
         created_date
-        
       }
     }
   }
