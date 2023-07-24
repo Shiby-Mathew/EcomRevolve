@@ -1,17 +1,17 @@
 [
   {
     "title": "Awesome",
-    "review": "Very good customer service"
-    
+    "review": "Very good customer service",
+    "author": "Mary"
   },
   {
     "title": "Nice",
-    "review": "Very good service"
-    
+    "review": "Very good service",
+    "author": "Mary"
   },
   {
     "title": "Cool",
-    "review": "Very nice"
-   
+    "review": "Very nice",
+    "author": "Brian"
   }
 ]

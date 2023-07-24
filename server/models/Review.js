@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const reviewSchema = new Schema({
   title: {
@@ -13,14 +14,12 @@ const reviewSchema = new Schema({
   created_date: {
     type: Date,
     default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
   },
-
-  user: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  author: {
+    type: String,
+    required: true,
+  },
 });
 
 const Review = model("Review", reviewSchema);
