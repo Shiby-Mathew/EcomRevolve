@@ -31,8 +31,10 @@ const ReviewForm = () => {
 
       setTitle("");
       setReview("");
+
       window.location.reload();
       navigate(-1);
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }

@@ -42,7 +42,8 @@ export const UPDATE_REVIEW = gql`
   mutation editReview($marketplaceId: ID!, $updatedReview: String!) {
     editReview(marketplaceId: $marketplaceId, updatedReview: $comment) {
       _id
-      reviews
+      review
+      author
     }
   }
 `;
@@ -51,7 +52,8 @@ export const REMOVE_REVIEW = gql`
   mutation removeReview($marketplaceId: ID!, $reviewId: ID!) {
     removeReview(marketplaceId: $marketplaceId, reviewId: $reviewId) {
       _id
-      reviews
+      review
+      author
     }
   }
 `;
