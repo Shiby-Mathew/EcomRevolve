@@ -19,8 +19,8 @@ const EditForm = () => {
   console.log(reviewData);
 
   const [state, setState] = useState({
-    title:reviewData.title,
-    review:reviewData.review
+    title: reviewData.title,
+    review: reviewData.review,
   });
 
   // useEffect(() => {
@@ -30,17 +30,13 @@ const EditForm = () => {
   // const [editReview, { error }] = useMutation(UPDATE_REVIEW);
 
   const handleChange = (e) => {
-
-setState((prevState)=>{
-
-})
-
+    setState((prevState) => {});
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("editing");
-  
+
     // try {
     //   const reviewData = await editReview({
     //     variables: {
@@ -66,7 +62,7 @@ setState((prevState)=>{
     <div>
       <form onSubmit={handleSubmit}>
         <div className="review-container">
-          <h2>Title:</h2>
+          <h2>Title</h2>
           <input
             className="input"
             value={reviewData.title}
@@ -75,7 +71,7 @@ setState((prevState)=>{
             type="title"
           />
 
-          <h2>Add your review:</h2>
+          <h2>Edit your review</h2>
           <textarea
             className="review-textarea"
             value={reviewData.review}
@@ -83,7 +79,7 @@ setState((prevState)=>{
             onChange={handleChange}
           ></textarea>
           <a href="#" onClick={handleSubmit} className="submit-review-button">
-            Edit Review
+            Confirm your review
           </a>
         </div>
       </form>
