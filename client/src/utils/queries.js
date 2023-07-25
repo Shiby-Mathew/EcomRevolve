@@ -37,10 +37,9 @@ export const QUERY_REVIEWS = gql`
     }
   }
 `;
-
-export const QUERY_EDITREVIEWS = gql`
-  query editreviews($reviewId: ID!) {
-    editreviews(reviewId: $reviewId) {
+export const QUERY_REVIEW = gql`
+  query reviews($reviewId: ID!) {
+    reviews(reviewId: $reviewId) {
       _id
       title
       review
@@ -49,3 +48,4 @@ export const QUERY_EDITREVIEWS = gql`
     }
   }
 `;
+

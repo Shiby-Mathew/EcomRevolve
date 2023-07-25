@@ -15,6 +15,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Marketplace from "./pages/Marketplace";
 import ReviewForm from "./pages/ReviewForm";
+import EditForm from "./pages/EditForm";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -53,6 +54,10 @@ function App() {
             path="/marketplace/:marketplaceId/add-review"
             element={<ReviewForm />}
           />
+          <Route
+            path="/marketplace/:reviewId/edit-review"
+            element={<EditForm />}
+          />{" "}
         </Routes>
         <Footer />
       </Router>
