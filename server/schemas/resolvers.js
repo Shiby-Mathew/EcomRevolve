@@ -95,7 +95,7 @@ const resolvers = {
         { $set: updatedReview },
         { runValidators: true, new: true }
       );
-         console.log(updateReview);
+      console.log(updateReview);
       return updateReview;
     },
   },
