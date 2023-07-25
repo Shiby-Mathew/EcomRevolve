@@ -31,6 +31,7 @@ const ReviewForm = () => {
 
       setTitle("");
       setReview("");
+
       navigate(-1);
     } catch (err) {
       console.error(err);

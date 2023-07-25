@@ -12,8 +12,8 @@ const resolvers = {
       //console.log("reviews");
       return Marketplace.findOne({ _id: marketplaceId }).populate("reviews");
     },
-    editreviews: async (parent, { reviewId }) => {
-      //console.log("reviews");
+    reviews: async (parent, { reviewId }) => {
+      console.log("reviews");
       return Review.findOne({ _id: reviewId });
     },
 
@@ -74,7 +74,7 @@ const resolvers = {
 
     removeReview: async (parent, { marketplaceId, reviewId }) => {
       //if(context.user)
-     // console.log(marketplaceId);
+      // console.log(marketplaceId);
       //console.log(reviewId);
 
       const review = await Review.findOneAndDelete({
@@ -82,7 +82,8 @@ const resolvers = {
       });
       await Marketplace.findOneAndUpdate(
         { _id: marketplaceId },
-        { $pull: { reviews: reviewId } }
+        { $pull: { reviews: reviewId } },
+        { new: true }
       );
 
       return review;
@@ -91,9 +92,10 @@ const resolvers = {
     editReview: async (parent, { reviewId, updatedReview }) => {
       const updateReview = await Review.findOneAndUpdate(
         { _id: reviewId },
-        { $set: { reviews: updatedReview } }
+        { $set: updatedReview },
+        { runValidators: true, new: true }
       );
-      
+         console.log(updateReview);
       return updateReview;
     },
   },
