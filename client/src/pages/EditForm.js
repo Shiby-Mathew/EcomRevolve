@@ -8,7 +8,7 @@ import Auth from "../utils/auth";
 const EditForm = () => {
   const { reviewId } = useParams();
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { loading, data } = useQuery(QUERY_REVIEW, {
     // pass URL parameter
@@ -26,6 +26,10 @@ const EditForm = () => {
     }
   }, [loading, data]);
 
+
+  const [editReview, { error }] = useMutation(UPDATE_REVIEW);
+
+
   const handleChange = (e) => {
     setState({
       ...state,
@@ -35,6 +39,18 @@ const EditForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const reviewData = await editReview({
+        variables: { reviewId, updatedReview:  state  },
+      });
+
+      setState("");
+      navigate(-1);
+    } catch (err) {
+      console.error(err);
+    }
+
   };
 
   return (

@@ -6,9 +6,11 @@ import Auth from "../utils/auth";
 import { useEffect } from "react";
 
 const ReviewList = ({ markeplaceData }) => {
+
   const [removeReview, { error }] = useMutation(REMOVE_REVIEW);
 
   const handleDelete = async (reviewId, marketplaceId) => {
+
     try {
       const { data } = await removeReview({
         variables: { marketplaceId, reviewId },

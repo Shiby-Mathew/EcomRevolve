@@ -39,10 +39,12 @@ export const ADD_REVIEW = gql`
 `;
 
 export const UPDATE_REVIEW = gql`
-  mutation editReview($marketplaceId: ID!, $updatedReview: String!) {
-    editReview(marketplaceId: $marketplaceId, updatedReview: $comment) {
+  mutation editReview($reviewId: ID!, $updatedReview: ReviewInput!) {
+    editReview(reviewId: $reviewId, updatedReview: $updatedReview) {
       _id
+      title
       review
+      created_date
       author
     }
   }
