@@ -14,14 +14,20 @@ const EditForm = () => {
     // pass URL parameter
     variables: { reviewId: reviewId },
   });
-  const reviewData = data?.reviews || {};
 
-  console.log(reviewData);
+  const [state, setState] = useState({});
 
-  const [state, setState] = useState({
-    title:reviewData.title,
-    review:reviewData.review
-  });
+  useEffect(() => {
+    console.log("state");
+    console.log(state);
+
+    if (!loading && data) {
+      setState({
+        title: data.reviews.title,
+        review: data.reviews.review,
+      });
+    }
+  }, [loading, data]);
 
   // useEffect(() => {
   //   if (reviewData) setNewvalue(reviewData);
@@ -30,17 +36,16 @@ const EditForm = () => {
   // const [editReview, { error }] = useMutation(UPDATE_REVIEW);
 
   const handleChange = (e) => {
-
-setState((prevState)=>{
-
-})
-
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("editing");
-  
+    console.log(reviewId);
     // try {
     //   const reviewData = await editReview({
     //     variables: {
@@ -69,7 +74,7 @@ setState((prevState)=>{
           <h2>Title:</h2>
           <input
             className="input"
-            value={reviewData.title}
+            value={state.title}
             name="title"
             onChange={handleChange}
             type="title"
@@ -78,7 +83,7 @@ setState((prevState)=>{
           <h2>Add your review:</h2>
           <textarea
             className="review-textarea"
-            value={reviewData.review}
+            value={state.review}
             name="review"
             onChange={handleChange}
           ></textarea>
