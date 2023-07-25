@@ -18,7 +18,10 @@ const EditForm = () => {
 
   console.log(reviewData);
 
-  // const [newvalue, setNewvalue] = useState({});
+  const [state, setState] = useState({
+    title:reviewData.title,
+    review:reviewData.review
+  });
 
   // useEffect(() => {
   //   if (reviewData) setNewvalue(reviewData);
@@ -26,17 +29,18 @@ const EditForm = () => {
 
   // const [editReview, { error }] = useMutation(UPDATE_REVIEW);
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+
+setState((prevState)=>{
+
+})
+
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("editing");
-    // console.log(value);
-    // console.log(task.title);
-    // console.log(task.review);
-
-    //console.log(reviewId);
-
+  
     // try {
     //   const reviewData = await editReview({
     //     variables: {
