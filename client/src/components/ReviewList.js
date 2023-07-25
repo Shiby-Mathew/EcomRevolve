@@ -7,17 +7,17 @@ import { REMOVE_REVIEW } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const ReviewList = ({ markeplaceData }) => {
-  console.log(markeplaceData);
-  console.log(markeplaceData._id);
-  console.log(markeplaceData.name);
+  // console.log(markeplaceData);
+  // console.log(markeplaceData._id);
+  // console.log(markeplaceData.name);
 
   const [removeReview, { error }] = useMutation(REMOVE_REVIEW);
   //const [editReview, { error }] = useMutation(UPDATE_REVIEW);
 
   const handleDelete = async (reviewId, marketplaceId) => {
-    console.log("handleDelete");
-    console.log(reviewId);
-    console.log(marketplaceId);
+    // console.log("handleDelete");
+    // console.log(reviewId);
+    // console.log(marketplaceId);
 
     try {
       const { data } = await removeReview({

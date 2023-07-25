@@ -8,7 +8,7 @@ import Auth from "../utils/auth";
 const EditForm = () => {
   const { reviewId } = useParams();
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { loading, data } = useQuery(QUERY_REVIEW, {
     // pass URL parameter
@@ -29,11 +29,7 @@ const EditForm = () => {
     }
   }, [loading, data]);
 
-  // useEffect(() => {
-  //   if (reviewData) setNewvalue(reviewData);
-  // }, [reviewData]);
-
-  // const [editReview, { error }] = useMutation(UPDATE_REVIEW);
+  const [editReview, { error }] = useMutation(UPDATE_REVIEW);
 
   const handleChange = (e) => {
     setState({
@@ -46,25 +42,17 @@ const EditForm = () => {
     e.preventDefault();
     console.log("editing");
     console.log(reviewId);
-    // try {
-    //   const reviewData = await editReview({
-    //     variables: {
-    //       reviewId,
-    //       updatedReview: {
-    //         title,
-    //         review,
-    //         author: Auth.getProfile().data.username,
-    //       },
-    //     },
-    //   });
+    console.log(state);
+    try {
+      const reviewData = await editReview({
+        variables: { reviewId, updatedReview:  state  },
+      });
 
-    //   setTitle("");
-    //   setReview("");
-    //   window.location.reload();
-    //   navigate(-1);
-    // } catch (err) {
-    //   console.error(err);
-    // }
+      setState("");
+      navigate(-1);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
