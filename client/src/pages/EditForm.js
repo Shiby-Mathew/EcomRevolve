@@ -18,9 +18,6 @@ const EditForm = () => {
   const [state, setState] = useState({});
 
   useEffect(() => {
-    console.log("state");
-    console.log(state);
-
     if (!loading && data) {
       setState({
         title: data.reviews.title,
@@ -29,7 +26,9 @@ const EditForm = () => {
     }
   }, [loading, data]);
 
+
   const [editReview, { error }] = useMutation(UPDATE_REVIEW);
+
 
   const handleChange = (e) => {
     setState({
@@ -40,9 +39,7 @@ const EditForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("editing");
-    console.log(reviewId);
-    console.log(state);
+
     try {
       const reviewData = await editReview({
         variables: { reviewId, updatedReview:  state  },
@@ -53,6 +50,7 @@ const EditForm = () => {
     } catch (err) {
       console.error(err);
     }
+
   };
 
   return (
