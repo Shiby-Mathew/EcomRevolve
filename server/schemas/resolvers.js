@@ -46,7 +46,6 @@ const resolvers = {
     },
 
     addUser: async (parent, { username, email, password }) => {
-      //console.log(" inside");
       const user = await User.create({ username, email, password });
       console.log(user);
 
@@ -57,46 +56,47 @@ const resolvers = {
 
     // Add review and update marketplace
 
-    addReview: async (parent, { marketplaceId, newReview }) => {
-      //console.log("inside add review");
-      //console.log(marketplaceId);
-      //console.log(newReview);
-      const review = await Review.create({ ...newReview });
-      //console.log("newReview");
-      //console.log("review" + review);
-      await Marketplace.findOneAndUpdate(
-        { _id: marketplaceId },
-        { $addToSet: { reviews: review._id } }
-      );
-      //console.log("hello");
-      return review;
+    addReview: async (parent, { marketplaceId, newReview }, context) => {
+      if (context.user) {
+        const review = await Review.create({ ...newReview });
+
+        await Marketplace.findOneAndUpdate(
+          { _id: marketplaceId },
+          { $addToSet: { reviews: review._id } }
+        );
+
+        return review;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
 
-    removeReview: async (parent, { marketplaceId, reviewId }) => {
-      //if(context.user)
-      // console.log(marketplaceId);
-      //console.log(reviewId);
+    removeReview: async (parent, { marketplaceId, reviewId }, context) => {
+      if (context.user) {
+        const review = await Review.findOneAndDelete({
+          _id: reviewId,
+        });
+        await Marketplace.findOneAndUpdate(
+          { _id: marketplaceId },
+          { $pull: { reviews: reviewId } },
+          { new: true }
+        );
 
-      const review = await Review.findOneAndDelete({
-        _id: reviewId,
-      });
-      await Marketplace.findOneAndUpdate(
-        { _id: marketplaceId },
-        { $pull: { reviews: reviewId } },
-        { new: true }
-      );
-
-      return review;
+        return review;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
 
-    editReview: async (parent, { reviewId, updatedReview }) => {
-      const updateReview = await Review.findOneAndUpdate(
-        { _id: reviewId },
-        { $set: updatedReview },
-        { runValidators: true, new: true }
-      );
-      console.log(updateReview);
-      return updateReview;
+    editReview: async (parent, { reviewId, updatedReview }, context) => {
+      if (context.user) {
+        const updateReview = await Review.findOneAndUpdate(
+          { _id: reviewId },
+          { $set: updatedReview },
+          { runValidators: true, new: true }
+        );
+
+        return updateReview;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };
