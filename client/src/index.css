@@ -304,6 +304,11 @@ h1 {
   transition: font-size 0.3s, margin-bottom 0.3s, color 0.3s;
 }
 
+.review-actions button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .add-review-button {
   margin: 5px;
   padding: 5px;
