@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { REMOVE_REVIEW } from "../utils/mutations";
 // import { UPDATE_REVIEW } from "../utils/mutations";
-//import Auth from "../utils/auth";
+import Auth from "../utils/auth";
 
 const ReviewList = ({ markeplaceData }) => {
   console.log(markeplaceData);
@@ -28,11 +29,6 @@ const ReviewList = ({ markeplaceData }) => {
     }
   };
 
-  const handleEdit = async (reviewId) => {
-    console.log("handleEdit");
-    console.log(reviewId);
-  };
-
   return (
     <div>
       <div className="review-list">
@@ -46,10 +42,11 @@ const ReviewList = ({ markeplaceData }) => {
                 By: {review.author}, On: {review.created_date}
               </p>
               <div className="review-actions">
-                <button onClick={() => handleEdit(review._id)}>
-                  Edit Review
-                </button>
+                <Link to={`/marketplace/${review._id}/edit-review`}>
+                  <button disabled={!Auth.loggedIn()}>Edit Review</button>
+                </Link>
                 <button
+                  disabled={!Auth.loggedIn()}
                   onClick={() => handleDelete(review._id, markeplaceData._id)}
                 >
                   Delete Review
