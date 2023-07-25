@@ -34,8 +34,6 @@ export const addReview = async (reviewData) => {
       ...reviewData,
     };
 
-    // Here you would typically make an API request to add the new review to the backend
-    // For this example, we will just return the new review without actually adding it to the database
     return newReview;
   } catch (error) {
     throw new Error(error.message);

@@ -22,7 +22,6 @@ const LoginForm = (props) => {
   // submit form
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState.email);
     try {
       const { data } = await login({
         variables: { ...formState },

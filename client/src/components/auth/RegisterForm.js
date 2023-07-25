@@ -16,8 +16,6 @@ const RegisterForm = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log(name);
-    console.log(value);
     setFormState({
       ...formState,
       [name]: value,
@@ -25,11 +23,7 @@ const RegisterForm = () => {
   };
 
   const handleSubmit = async (event) => {
-    console.log(formState.username);
-    console.log(formState.email);
-
     event.preventDefault();
-    console.log(formState);
 
     try {
       const { data } = await addUser({

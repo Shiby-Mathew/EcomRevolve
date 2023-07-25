@@ -18,9 +18,6 @@ const EditForm = () => {
   const [state, setState] = useState({});
 
   useEffect(() => {
-    console.log("state");
-    console.log(state);
-
     if (!loading && data) {
       setState({
         title: data.reviews.title,
@@ -28,12 +25,6 @@ const EditForm = () => {
       });
     }
   }, [loading, data]);
-
-  // useEffect(() => {
-  //   if (reviewData) setNewvalue(reviewData);
-  // }, [reviewData]);
-
-  // const [editReview, { error }] = useMutation(UPDATE_REVIEW);
 
   const handleChange = (e) => {
     setState({
@@ -44,27 +35,6 @@ const EditForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("editing");
-    console.log(reviewId);
-    // try {
-    //   const reviewData = await editReview({
-    //     variables: {
-    //       reviewId,
-    //       updatedReview: {
-    //         title,
-    //         review,
-    //         author: Auth.getProfile().data.username,
-    //       },
-    //     },
-    //   });
-
-    //   setTitle("");
-    //   setReview("");
-    //   window.location.reload();
-    //   navigate(-1);
-    // } catch (err) {
-    //   console.error(err);
-    // }
   };
 
   return (

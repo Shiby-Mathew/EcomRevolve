@@ -15,7 +15,6 @@ const ReviewForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(review, title);
 
     try {
       const reviewData = await addReview({

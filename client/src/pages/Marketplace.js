@@ -1,20 +1,17 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-// import { fetchReviews } from "../services/reviewService";
 import ReviewList from "../components/ReviewList";
 import { useQuery } from "@apollo/client";
 import { QUERY_REVIEWS } from "../utils/queries";
 
 function Marketplace() {
   const { marketplaceId, marketplacename } = useParams();
-  console.log(marketplaceId, marketplacename);
 
   const { loading, data } = useQuery(QUERY_REVIEWS, {
     // pass URL parameter
     variables: { marketplaceId: marketplaceId },
   });
   const markeplaceData = data?.viewReview || {};
-  console.log(markeplaceData);
 
   // Placeholder marketplace data
   const marketplaceData = {

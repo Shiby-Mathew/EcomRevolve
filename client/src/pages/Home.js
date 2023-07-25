@@ -2,15 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_MARKETPLACES } from "../utils/queries";
-//import Marketplace from "./Marketplace";
 
 function Home() {
   const { loading, data } = useQuery(QUERY_MARKETPLACES);
 
-  console.log(data);
   const marketplaces = data?.marketplaces || [];
 
-  console.log(marketplaces);
   return (
     <div className="home-content">
       <div className="container">
