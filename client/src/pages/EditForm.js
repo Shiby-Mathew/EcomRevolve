@@ -71,7 +71,7 @@ const EditForm = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <div className="review-container">
-          <h2>Title:</h2>
+          <h2>Title</h2>
           <input
             className="input"
             value={state.title}
@@ -80,7 +80,7 @@ const EditForm = () => {
             type="title"
           />
 
-          <h2>Add your review:</h2>
+          <h2>Edit your review</h2>
           <textarea
             className="review-textarea"
             value={state.review}
@@ -88,7 +88,7 @@ const EditForm = () => {
             onChange={handleChange}
           ></textarea>
           <a href="#" onClick={handleSubmit} className="submit-review-button">
-            Edit Review
+            Confirm your review
           </a>
         </div>
       </form>
