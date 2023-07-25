@@ -26,7 +26,7 @@ function Home() {
           <>
             <div className="marketplace-list">
               {marketplaces.map((marketplace) => (
-                <div className="marketplace-item" key={marketplace.id}>
+                <div className="marketplace-item" key={marketplace._id}>
                   <Link
                     to={`marketplace/${marketplace._id}/${marketplace.name}`}
                   >
