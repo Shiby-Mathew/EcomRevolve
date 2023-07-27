@@ -21,7 +21,7 @@ Join our vibrant community, where shoppers from all corners of Australia share t
 ## Installation
 
 Please follow the below link for the deployed app on Heroku
-[(link)](https://ecomrevolve-3cc9d9562799.herokuapp.com/)
+[EcommerceRevolve](https://ecomrevolve-3cc9d9562799.herokuapp.com/)
 
 Alternativelyt, if fork from github, please follow the below steps:
 Install the initial package
