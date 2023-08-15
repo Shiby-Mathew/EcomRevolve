@@ -4,6 +4,10 @@ const path = require("path");
 const { authMiddleware } = require("./utils/auth");
 const { typeDefs, resolvers } = require("./schemas");
 
+require("dotenv").config();
+const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
+const cors = require("cors");
+
 const db = require("./config/connection");
 
 const PORT = process.env.PORT || 3001;
@@ -23,6 +27,33 @@ if (process.env.NODE_ENV === "production") {
 }
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
+app.post("/payment", cors(), async (req, res) => {
+  let { amount, id } = req.body;
+
+  try {
+    const payment = await stripe.paymentIntents.create({
+      amount,
+      currency: "AUD",
+      description: "Donation",
+      payment_method: id,
+      confirm: true,
+    });
+
+    // console.log("Payment", payment);
+
+    res.json({
+      message: "Payment successful",
+      success: true,
+    });
+  } catch (error) {
+    console.log("Error", error);
+    res.json({
+      message: "Payment failed",
+      success: false,
+    });
+  }
 });
 
 const startApolloServer = async () => {

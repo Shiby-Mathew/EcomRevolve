@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_MARKETPLACES } from "../utils/queries";
+
+import StripeContainer from "../components/StripeContainer";
+import Auth from "../utils/auth";
 
 function Home() {
   const { loading, data } = useQuery(QUERY_MARKETPLACES);
 
   const marketplaces = data?.marketplaces || [];
+  const [showItem, setshowItem] = useState(false);
 
   return (
     <div className="home-content">
@@ -33,6 +37,31 @@ function Home() {
                 </div>
               ))}
             </div>
+          </>
+        )}
+      </div>
+
+      <div className="donation">
+        <h3 className="donheading">Please Donate</h3>
+        {showItem ? (
+          <StripeContainer />
+        ) : (
+          <>
+            {" "}
+            <select className="new">
+              <option value="0">Donation Amount</option>
+              <option value="1">$5</option>
+              <option value="2">$10</option>
+              <option value="3">$15</option>
+              <option value="">$None</option>
+            </select>
+            {Auth.loggedIn() ? (
+              <button className="donButton" onClick={() => setshowItem(true)}>
+                Donate
+              </button>
+            ) : (
+              <p className="review-message">Please login/register to Donate</p>
+            )}
           </>
         )}
       </div>
