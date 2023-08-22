@@ -488,11 +488,12 @@ h1 {
   margin: 0 15px 20px;
   padding: 0;
   border-style: none;
-  background-color: #7795f8;
+  background-color: #0fa6f7;
   will-change: opacity, transform;
   box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 #829fff;
+    inset 0 1px 0 #0fa6f7;
   border-radius: 4px;
+  color: #fff;
 }
 
 .FormRow {
@@ -501,7 +502,8 @@ h1 {
   -ms-flex-align: center;
   align-items: center;
   margin-left: 15px;
-  border-top: 1px solid #819efc;
+  border-top: 1px solid#0fa6f7;
+  color: #fff;
 }
 
 .StripeElement--webkit-autofill {
@@ -520,9 +522,8 @@ h1 {
   width: 40%;
   height: 40px;
   margin: 40px auto 0;
-  background-color: #f6a4eb;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 #ffb9f6;
+  background-color: #0fa6f7;
+  border-color: #0fa6f7;
   border-radius: 4px;
   color: #fff;
   font-weight: 600;
@@ -533,11 +534,11 @@ h1 {
   text-align: center;
 }
 
-.donButton:active {
-  background-color: #d782d9;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 #e298d8;
-  transform: scale(0.99);
+.donButton:hover {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #144e89;
+  transition: font-size 0.3s, margin-bottom 0.3s, color 0.3s;
 }
 
 .donation {
@@ -547,12 +548,20 @@ h1 {
 }
 .new {
   display: block;
-  background-color: #7795f8;
+  background-color: #0fa6f7;
+  border-color: #0fa6f7;
+  border-radius: 4px;
   margin: auto;
   color: #fff;
   border: none;
+  font-size: 18px;
+  text-align: center;
 }
 
 .donheading {
   text-align: center;
+}
+
+.CardField-input-wrapper {
+  color: #fff;
 }
