@@ -40,35 +40,41 @@ const LoginForm = (props) => {
   };
 
   return (
-    <form className="signup-form" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          placeholder="Your email"
-          id="email"
-          name="email"
-          value={formState.email}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="******"
-          name="password"
-          value={formState.password}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <button className="btn btn-primary" type="submit">
-        Login
-      </button>
-    </form>
+    <div>
+      <form className="signup-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            placeholder="Your email"
+            id="email"
+            name="email"
+            value={formState.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="******"
+            name="password"
+            value={formState.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button className="btn btn-primary" type="submit">
+          Login
+        </button>
+      </form>
+
+      {error && (
+        <div className="errorMsg">{error.message}</div>
+      )}
+    </div>
   );
 };
 
