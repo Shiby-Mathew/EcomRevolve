@@ -6,18 +6,18 @@ const CARD_OPTIONS = {
   iconStyle: "solid",
   style: {
     base: {
-      iconColor: "#c4f0ff",
-      color: "fff",
+      iconColor: "#fff",
+      color: "#fff",
       fontWeight: 500,
       fontFamily: "Rotobo,Open Sans,Segoe UI,sans-serif",
       fontSize: "16px",
       fontSmoothing: "antialiased",
-      ":-webkit-autofill": { color: "fce883" },
-      "::placeholder": { color: "#87bbfd" },
+      ":-webkit-autofill": { color: "#fff" },
+      "::placeholder": { color: "#0fa6f7" },
     },
     invalid: {
-      iconColor: "#ffc7ee",
-      color: "#ffc7ee",
+      iconColor: "#f02800",
+      color: "#f02800",
     },
   },
 };
