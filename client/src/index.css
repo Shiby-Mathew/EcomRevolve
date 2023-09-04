@@ -561,13 +561,6 @@ h1 {
 .donheading {
   text-align: center;
 }
-/* **********Error */
-
-.errorMsg {
-  margin: 20px 20px 0;
-  color: red;
-  text-align: center;
-}
 
 .CardField-input-wrapper {
   color: #fff;
