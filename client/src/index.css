@@ -565,3 +565,9 @@ h1 {
 .CardField-input-wrapper {
   color: #fff;
 }
+
+.errorMsg {
+  margin: 20px 20px 0;
+  color: red;
+  text-align: center;
+}

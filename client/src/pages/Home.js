@@ -55,13 +55,9 @@ function Home() {
               <option value="3">$15</option>
               <option value="">$None</option>
             </select>
-            {Auth.loggedIn() ? (
-              <button className="donButton" onClick={() => setshowItem(true)}>
-                Donate
-              </button>
-            ) : (
-              <p className="review-message">Please login/register to Donate</p>
-            )}
+            <button className="donButton" onClick={() => setshowItem(true)}>
+              Donate
+            </button>
           </>
         )}
       </div>
